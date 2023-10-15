@@ -1,8 +1,11 @@
 <template>
-  <form>
-    <input type="text" placeholder="Email">
-    <input type="text" placeholder="Senha">
-  </form>
+<main class="login">
+  <section class="forms">
+    <form class="login">
+      <h2></h2>
+    </form>
+  </section>
+</main>
 </template>
 
 <script setup></script>
