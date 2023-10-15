@@ -1,5 +1,4 @@
 export class HandleAuthError {
-  constructor() {}
 
   execute(error) {
     switch (error.code) {
