@@ -6,6 +6,7 @@ import handleAuthError from '../utils/auth-handler';
 
 const HOME_ROUTE = '/home';
 const LOGIN_ROUTE = '/login';
+const REGISTER_ROUTE = '/register';
 
 export default createStore({
   state: {
@@ -54,7 +55,7 @@ export default createStore({
         } else {
           commit('SET_USER', user);
 
-          if (router.isReady() && router.currentRoute.value.path === LOGIN_ROUTE) {
+          if (router.isReady() && router.currentRoute.value.path === LOGIN_ROUTE || REGISTER_ROUTE) {
             router.push(HOME_ROUTE);
           }
         }
