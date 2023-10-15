@@ -21,6 +21,10 @@
           v-model="register_form.password"
         />
         <button type="submit" class="button">Entrar</button>
+        <hr class="horizontal-line" />
+        <span class="span-register"
+          >Já possui uma conta no Televolve? <a :href="linkToLogin">👉Faça login</a></span
+        >
       </form>
     </div>
   </div>
@@ -34,6 +38,7 @@ import { useStore } from 'vuex';
 
 const register_form = ref({});
 const store = useStore();
+const linkToLogin = 'http://localhost:5173/login';
 
 const register = () => {
   store.dispatch('register', register_form.value);
@@ -121,7 +126,28 @@ const register = () => {
   width: 100%;
 }
 
+.horizontal-line {
+  width: 100%;
+  margin-top: 20px;
+  border: none;
+  height: 1px;
+  background-color: grey;
+}
+
+.span-register {
+  display: flex;
+  padding: 7px 15px 8px 15px;
+  color: #bbb;
+  font-size: 0.9rem;
+  width: 100%;
+}
+
 h1 {
   margin-bottom: 120px;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
 }
 </style>

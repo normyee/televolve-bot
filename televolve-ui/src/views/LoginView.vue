@@ -4,7 +4,7 @@
       <img :src="img" alt="" />
     </div>
     <div class="right-box">
-      <h1>LOGUE SUA CONTA</h1>
+      <h1>LOGUE AGORA</h1>
       <form @submit.prevent="login" class="login-form">
         <span class="texts">E-mail</span>
         <input
@@ -21,6 +21,10 @@
           v-model="login_form.password"
         />
         <button type="submit" class="button">Entrar</button>
+        <hr class="horizontal-line" />
+        <span class="span-register"
+          >Novo no Televolve? <a :href="linkToRegister">👉Crie uma conta</a></span
+        >
       </form>
     </div>
   </div>
@@ -33,6 +37,7 @@ import { useStore } from 'vuex';
 
 const login_form = ref({});
 const store = useStore();
+const linkToRegister = 'http://localhost:5173/register';
 
 const login = () => {
   store.dispatch('login', login_form.value);
@@ -120,7 +125,28 @@ const login = () => {
   width: 100%;
 }
 
+.horizontal-line {
+  width: 100%;
+  margin-top: 20px;
+  border: none;
+  height: 1px;
+  background-color: grey;
+}
+
+.span-register {
+  display: flex;
+  padding: 7px 15px 8px 15px;
+  color: #bbb;
+  font-size: 0.9rem;
+  width: 100%;
+}
+
 h1 {
   margin-bottom: 120px;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
 }
 </style>
