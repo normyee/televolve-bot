@@ -1,0 +1,20 @@
+.span-register {
+  display: flex;
+  padding: 7px 15px 8px 15px;
+  color: #bbb;
+  font-size: 0.9rem;
+  width: 100%;
+}
+
+.link-to {
+  text-decoration: none;
+  color: inherit;
+}
+
+.horizontal-line {
+  width: 100%;
+  margin-top: 20px;
+  border: none;
+  height: 1px;
+  background-color: grey;
+}

@@ -15,15 +15,15 @@
       v-model="login_form.password"
     />
     <button type="submit" class="button">Entrar</button>
-    <hr class="horizontal-line" />
-    <span class="span-register"
-      >Novo no Televolve?
-      <router-link class="link-to" to="/register">👉Crie uma conta</router-link></span
-    >
+    <SectionDivider
+      spanMessage="Novo no Televolve?"
+      linkMessage="👉Crie uma conta"
+    ></SectionDivider>
   </form>
 </template>
 
 <script setup>
+import SectionDivider from './SectionDivider.vue';
 import { ref } from 'vue';
 import { useStore } from 'vuex';
 
