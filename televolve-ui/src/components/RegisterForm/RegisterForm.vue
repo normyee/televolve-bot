@@ -31,6 +31,7 @@ import { ref } from 'vue';
 const register_form = ref({});
 const store = useStore();
 
+// Ativa o método "register" do store ao acionar o evento de submit.
 const register = () => {
   store.dispatch('register', register_form.value);
 };

@@ -5,7 +5,7 @@ import { useStore } from 'vuex';
 
 const store = useStore();
 
-//Used onBeforeMount to check if there's an user.
+//Método de cíclo de vida do Vue para checar se existe um usuário atual.
 onBeforeMount(() => {
   store.dispatch('fetchUser');
 });

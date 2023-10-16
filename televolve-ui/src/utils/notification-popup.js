@@ -22,4 +22,5 @@ class Notification {
   }
 }
 
+// Exporta a classe instanciada.
 export default new Notification();

@@ -1,6 +1,9 @@
 import notification from './notification-popup';
 
+// Classe que lida com erros de autenticação.
 export class HandleAuthError {
+
+  // Injeção de dependência da classe que lida com notificações/popup
   constructor(notification) {
     this.notification = notification;
   }
@@ -31,4 +34,5 @@ export class HandleAuthError {
   }
 }
 
+// Passando a instância da classe Notification.
 export default new HandleAuthError(notification);

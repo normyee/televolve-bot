@@ -31,6 +31,7 @@ import { useStore } from 'vuex';
 const login_form = ref({});
 const store = useStore();
 
+// Ativa o método "login" do store ao acionar o evento de submit.
 const login = () => {
   store.dispatch('login', login_form.value);
 };

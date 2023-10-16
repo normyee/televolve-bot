@@ -28,15 +28,21 @@ const router = createRouter({
   ]
 });
 
+// Este bloco de código é chamado antes de cada navegação de rota.
 router.beforeEach((to, _from, next) => {
+  // Condição para redirecionamento que verifica se o usuário está tentando acessar a rota "/login" e já está autenticado.
   if (to.path === '/login' && auth.currentUser) {
+    // Redireciona o usuário para a rota "/home" e interrompe a execução.
     next('/home');
     return;
   }
+  // Verifica se a rota requer autenticação com base na propriedade "meta.requiresAuth" nas definições da rota.
   if (to.matched.some((record) => record.meta.requiresAuth) && !auth.currentUser) {
+    // Redireciona o usuário para a rota "/login" se não estiver autenticado.
     next('/login');
     return;
   }
+  // Permite a navegação normal se nenhuma das condições anteriores for atendida.
   next();
 });
 
