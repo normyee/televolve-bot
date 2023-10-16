@@ -2,7 +2,7 @@
   <hr class="horizontal-line" />
   <span class="span-register"
     >{{ spanMessage }}
-    <router-link class="link-to" to="/register">{{ linkMessage }}</router-link></span
+    <router-link class="link-to" :to="to">{{ linkMessage }}</router-link></span
   >
 </template>
 
@@ -10,7 +10,8 @@
 export default {
   props: {
     spanMessage: String,
-    linkMessage: String
+    linkMessage: String,
+    to: String
   }
 };
 </script>

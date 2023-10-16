@@ -18,6 +18,7 @@
     <SectionDivider
       spanMessage="Novo no Televolve?"
       linkMessage="👉Crie uma conta"
+      to="/register"
     ></SectionDivider>
   </form>
 </template>
