@@ -1,29 +1,34 @@
+import notification from './notification-popup';
+
 export class HandleAuthError {
+  constructor(notification) {
+    this.notification = notification;
+  }
 
   execute(error) {
     switch (error.code) {
       case 'auth/user-not-found':
-        alert('User not found');
+        this.notification.warn('Usuário não encontrado!');
         break;
       case 'auth/wrong-password':
-        alert('Wrong password');
+        this.notification.warn('Senha incorreta!');
         break;
       case 'auth/email-already-in-use':
-        alert('Email already in use');
+        this.notification.warn('Email já em uso!');
         break;
       case 'auth/invalid-email':
-        alert('Invalid email');
+        this.notification.warn('Email inválido!');
         break;
       case 'auth/operation-not-allowed':
-        alert('Operation not allowed');
+        this.notification.error('Esta operação não é permitida!');
         break;
       case 'auth/weak-password':
-        alert('Weak password');
+        this.notification.warn('Senha fraca!');
         break;
       default:
-        alert('Something went wrong');
+        this.notification.warn('Ooops! Algo deu errado!');
     }
   }
 }
 
-export default new HandleAuthError()
+export default new HandleAuthError(notification);
