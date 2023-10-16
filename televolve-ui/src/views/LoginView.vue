@@ -5,13 +5,13 @@
     </div>
     <div class="right-box">
       <h1>LOGUE AGORA</h1>
-      <AuthForm></AuthForm>
+      <LoginForm></LoginForm>
     </div>
   </div>
 </template>
 
 <script setup>
-import AuthForm from '../components/AuthForm/AuthForm.vue';
+import LoginForm from '../components/LoginForm/loginform.vue';
 import img from '../assets/televolve.png';
 </script>
 
