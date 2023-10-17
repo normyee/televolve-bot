@@ -3,6 +3,7 @@
   align-items: center;
   padding: 5px 11px;
   flex: 1;
+  background-color: #e6eaec;
 }
 
 .message-footer input {

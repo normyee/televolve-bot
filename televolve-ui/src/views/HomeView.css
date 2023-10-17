@@ -25,7 +25,7 @@
   background: none;
 }
 ::-webkit-scrollbar-thumb {
-  background: #b9b3ae;
+  background-color: #d8dbdc;
 }
 
 .avatar {
@@ -44,14 +44,13 @@
   height: 100%;
   object-fit: cover;
 }
-.header-right i {
-  font-size: 25px;
-  margin: 13px 13px;
-  opacity: 0.9;
+.header-right:hover {
+  cursor: pointer;
 }
 
 .slidebar {
   flex: 6;
+  background-color: #e6eaec;
 }
 .header {
   background-color: #202c33;
@@ -83,7 +82,7 @@
   width: 100%;
 }
 .slidebar-chat:hover {
-  background-color: #f0f0f0;
+  background-color: #d8dbdc;
   cursor: pointer;
 }
 
@@ -177,4 +176,20 @@ h4 {
 /* {ESTILOS DOS SVG} */
 .icon path {
   fill: #aebac1;
+}
+
+.icon:hover {
+  animation: roll 3s infinite;
+  transform: rotate(30deg);
+}
+
+/* {KEYFRAMES} */
+
+@keyframes roll {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }

@@ -249,7 +249,7 @@
               <h4>SISIAMIMI</h4>
             </div>
           </div>
-          <div class="header-right">
+          <div class="header-right" @click="$store.dispatch('logOut')">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
