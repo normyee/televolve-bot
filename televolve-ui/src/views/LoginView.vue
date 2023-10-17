@@ -12,7 +12,7 @@
 
 <script setup>
 import LoginForm from '../components/LoginForm/loginform.vue';
-import img from '../assets/televolve.png';
+import img from '../assets/img/televolve.png';
 </script>
 
 <style src="./LoginView.css" scoped></style>

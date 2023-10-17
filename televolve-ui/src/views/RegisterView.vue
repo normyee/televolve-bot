@@ -11,7 +11,7 @@
 </template>
 
 <script setup>
-import img from '../assets/televolve.png';
+import img from '../assets/img/televolve.png';
 import RegisterForm from '../components/RegisterForm/RegisterForm.vue';
 </script>
 

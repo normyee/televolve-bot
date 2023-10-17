@@ -4,13 +4,13 @@
       <div class="slidebar">
         <div class="header">
           <div class="avatar">
-            <img src="../assets/profile.png" alt="profile" />
+            <img src="../assets/img/profile.png" alt="profile" />
           </div>
         </div>
         <div class="slidebar-chats">
           <div class="slidebar-chat">
             <div class="chat-avatar">
-              <img src="../assets/telegram.png" alt="profile-icon" />
+              <img src="../assets/img/telegram.png" alt="profile-icon" />
             </div>
             <div class="chat-info">
               <h4>USUÁRIO</h4>
@@ -22,7 +22,7 @@
           </div>
           <div class="slidebar-chat">
             <div class="chat-avatar">
-              <img src="../assets/telegram.png" alt="profile-icon" />
+              <img src="../assets/img/telegram.png" alt="profile-icon" />
             </div>
             <div class="chat-info">
               <h4>SISIAMIMI</h4>
@@ -34,7 +34,7 @@
           </div>
           <div class="slidebar-chat">
             <div class="chat-avatar">
-              <img src="../assets/telegram.png" alt="profile-icon" />
+              <img src="../assets/img/telegram.png" alt="profile-icon" />
             </div>
             <div class="chat-info">
               <h4>USUÁRIO</h4>
@@ -46,7 +46,7 @@
           </div>
           <div class="slidebar-chat">
             <div class="chat-avatar">
-              <img src="../assets/telegram.png" alt="profile-icon" />
+              <img src="../assets/img/telegram.png" alt="profile-icon" />
             </div>
             <div class="chat-info">
               <h4>USUÁRIO</h4>
@@ -58,7 +58,7 @@
           </div>
           <div class="slidebar-chat">
             <div class="chat-avatar">
-              <img src="../assets/telegram.png" alt="profile-icon" />
+              <img src="../assets/img/telegram.png" alt="profile-icon" />
             </div>
             <div class="chat-info">
               <h4>USUÁRIO</h4>
@@ -70,7 +70,7 @@
           </div>
           <div class="slidebar-chat">
             <div class="chat-avatar">
-              <img src="../assets/telegram.png" alt="profile-icon" />
+              <img src="../assets/img/telegram.png" alt="profile-icon" />
             </div>
             <div class="chat-info">
               <h4>USUÁRIO</h4>
@@ -82,7 +82,7 @@
           </div>
           <div class="slidebar-chat">
             <div class="chat-avatar">
-              <img src="../assets/telegram.png" alt="profile-icon" />
+              <img src="../assets/img/telegram.png" alt="profile-icon" />
             </div>
             <div class="chat-info">
               <h4>USUÁRIO</h4>
@@ -94,7 +94,7 @@
           </div>
           <div class="slidebar-chat">
             <div class="chat-avatar">
-              <img src="../assets/telegram.png" alt="profile-icon" />
+              <img src="../assets/img/telegram.png" alt="profile-icon" />
             </div>
             <div class="chat-info">
               <h4>USUÁRIO</h4>
@@ -106,7 +106,7 @@
           </div>
           <div class="slidebar-chat">
             <div class="chat-avatar">
-              <img src="../assets/telegram.png" alt="profile-icon" />
+              <img src="../assets/img/telegram.png" alt="profile-icon" />
             </div>
             <div class="chat-info">
               <h4>USUÁRIO</h4>
@@ -118,7 +118,7 @@
           </div>
           <div class="slidebar-chat">
             <div class="chat-avatar">
-              <img src="../assets/telegram.png" alt="profile-icon" />
+              <img src="../assets/img/telegram.png" alt="profile-icon" />
             </div>
             <div class="chat-info">
               <h4>USUÁRIO</h4>
@@ -130,7 +130,7 @@
           </div>
           <div class="slidebar-chat">
             <div class="chat-avatar">
-              <img src="../assets/telegram.png" alt="profile-icon" />
+              <img src="../assets/img/telegram.png" alt="profile-icon" />
             </div>
             <div class="chat-info">
               <h4>USUÁRIO</h4>
@@ -142,7 +142,7 @@
           </div>
           <div class="slidebar-chat">
             <div class="chat-avatar">
-              <img src="../assets/telegram.png" alt="profile-icon" />
+              <img src="../assets/img/telegram.png" alt="profile-icon" />
             </div>
             <div class="chat-info">
               <h4>USUÁRIO</h4>
@@ -154,7 +154,7 @@
           </div>
           <div class="slidebar-chat">
             <div class="chat-avatar">
-              <img src="../assets/telegram.png" alt="profile-icon" />
+              <img src="../assets/img/telegram.png" alt="profile-icon" />
             </div>
             <div class="chat-info">
               <h4>USUÁRIO</h4>
@@ -166,7 +166,7 @@
           </div>
           <div class="slidebar-chat">
             <div class="chat-avatar">
-              <img src="../assets/telegram.png" alt="profile-icon" />
+              <img src="../assets/img/telegram.png" alt="profile-icon" />
             </div>
             <div class="chat-info">
               <h4>USUÁRIO</h4>
@@ -178,7 +178,7 @@
           </div>
           <div class="slidebar-chat">
             <div class="chat-avatar">
-              <img src="../assets/telegram.png" alt="profile-icon" />
+              <img src="../assets/img/telegram.png" alt="profile-icon" />
             </div>
             <div class="chat-info">
               <h4>USUÁRIO</h4>
@@ -190,7 +190,7 @@
           </div>
           <div class="slidebar-chat">
             <div class="chat-avatar">
-              <img src="../assets/telegram.png" alt="profile-icon" />
+              <img src="../assets/img/telegram.png" alt="profile-icon" />
             </div>
             <div class="chat-info">
               <h4>USUÁRIO</h4>
@@ -202,7 +202,7 @@
           </div>
           <div class="slidebar-chat">
             <div class="chat-avatar">
-              <img src="../assets/telegram.png" alt="profile-icon" />
+              <img src="../assets/img/telegram.png" alt="profile-icon" />
             </div>
             <div class="chat-info">
               <h4>USUÁRIO</h4>
@@ -214,7 +214,7 @@
           </div>
           <div class="slidebar-chat">
             <div class="chat-avatar">
-              <img src="../assets/telegram.png" alt="profile-icon" />
+              <img src="../assets/img/telegram.png" alt="profile-icon" />
             </div>
             <div class="chat-info">
               <h4>USUÁRIO</h4>
@@ -226,7 +226,7 @@
           </div>
           <div class="slidebar-chat">
             <div class="chat-avatar">
-              <img src="../assets/telegram.png" alt="profile-icon" />
+              <img src="../assets/img/telegram.png" alt="profile-icon" />
             </div>
             <div class="chat-info">
               <h4>USUÁRIO</h4>
@@ -243,7 +243,7 @@
         <div class="header">
           <div class="chat-title">
             <div class="avatar">
-              <img src="../assets/telegram.png" alt="profile-icon" />
+              <img src="../assets/img/telegram.png" alt="profile-icon" />
             </div>
             <div class="message-header-content">
               <h4>SISIAMIMI</h4>
