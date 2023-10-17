@@ -264,11 +264,11 @@
           </div>
         </div>
         <div class="message-content">
-          <p class="chat-message chat-received">
-            Enviei uma mensagem 👻 ( ENVIADO )<span class="chat-time">11:38 pm</span>
+          <p class="chat-message chat-received bubble left">
+            Mensagem ENVIADA 👻<span class="chat-time">11:38 pm</span>
           </p>
-          <p class="chat-message chat-sent">
-            Essa é uma mensagem 👻 ( RECEBIDO )<span class="chat-time">11:39 pm</span>
+          <p class="chat-message chat-sent bubble right">
+            Mensagem RECEBIDA 👻<span class="chat-time">11:39 pm</span>
           </p>
         </div>
         <MessageFooter></MessageFooter>
