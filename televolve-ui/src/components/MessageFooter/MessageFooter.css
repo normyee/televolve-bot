@@ -20,3 +20,7 @@
   margin-top: 100px;
   margin-right: 850px;
 }
+
+.send:hover, .emojis:hover {
+  cursor: pointer;
+}
