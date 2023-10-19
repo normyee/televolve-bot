@@ -1,0 +1,78 @@
+/* { ESTILIZAÇÃO DA BARRA DE ROLAGEM } */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: none;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #d8dbdc;
+}
+
+/* { CONTAINER DE CONTEÚDO DE MENSAGENS } */
+
+.message-content {
+  background-position: center;
+  height: calc(100vh - 120px);
+  padding: 20px 80px;
+  overflow-y: scroll;
+}
+
+.chat-message {
+  font-size: 14px;
+  padding: 8px 10px;
+  width: fit-content;
+  border-radius: 8px;
+  background-color: white;
+  margin-bottom: 30px;
+  color: white;
+}
+
+.chat-sent {
+  margin-left: auto;
+  background-color: #202c33;
+}
+
+.chat-received {
+  background-color: #202c33;
+}
+
+/* { BALÃOZINHO DA MENSAGEM } */
+.bubble {
+  --r: 15px;
+  --t: 15px;
+  max-width: 300px;
+  padding: calc(2 * var(--r) / 3);
+  -webkit-mask:
+    radial-gradient(var(--t) at var(--_d) 0, #0000 98%, #000 102%) var(--_d) 100% /
+      calc(100% - var(--r)) var(--t) no-repeat,
+    conic-gradient(at var(--r) var(--r), #000 75%, #0000 0) calc(var(--r) / -2) calc(var(--r) / -2)
+      padding-box,
+    radial-gradient(50% 50%, #000 98%, #0000 101%) 0 0 / var(--r) var(--r) space padding-box;
+  mask:
+    radial-gradient(var(--t) at var(--_d) 0, #0000 98%, #000 102%) var(--_d) 100% /
+      calc(100% - var(--r)) var(--t) no-repeat,
+    conic-gradient(at var(--r) var(--r), #000 75%, #0000 0) calc(var(--r) / -2) calc(var(--r) / -2)
+      padding-box,
+    radial-gradient(50% 50%, #000 98%, #0000 101%) 0 0 / var(--r) var(--r) space padding-box;
+  background: black;
+  color: #fff;
+}
+
+/* { BALÃOZINHO ESQUERDO } */
+.left {
+  --_d: 0%;
+  border-left: var(--t) solid #0000;
+}
+
+/* { BALÃOZINHO DIREITO } */
+.right {
+  --_d: 100%;
+  border-right: var(--t) solid #0000;
+}
+
+.chat-time {
+  margin-left: 10px;
+  font-size: 10px;
+  color: grey;
+}
