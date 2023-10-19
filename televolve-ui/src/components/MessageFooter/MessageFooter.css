@@ -14,6 +14,7 @@
   border: none;
   border-radius: 20px;
   font-size: 15px;
+  user-select: none;
 }
 
 .emoji-picker {
@@ -21,6 +22,32 @@
   margin-right: 850px;
 }
 
-.send:hover, .emojis:hover {
+.send-input:hover,
+.emojis:hover {
   cursor: pointer;
+}
+
+.send-input:active,
+.emojis:active {
+  animation: horizontal-shaking 0.35s infinite;
+}
+
+/* { KEYFRAMES } */
+
+@keyframes horizontal-shaking {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(5px);
+  }
+  50% {
+    transform: translateX(-5px);
+  }
+  75% {
+    transform: translateX(5px);
+  }
+  100% {
+    transform: translateX(0);
+  }
 }

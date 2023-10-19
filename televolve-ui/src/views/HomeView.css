@@ -59,6 +59,7 @@
   align-items: center;
   padding: 10px 15px;
   border-right: 1px solid rgba(0, 0, 0, 0.1);
+  user-select: none;
 }
 
 .chat-avatar {
@@ -80,6 +81,7 @@
   justify-content: flex-start;
   padding: 10px 12px;
   width: 100%;
+  user-select: none;
 }
 .slidebar-chat:hover {
   background-color: #d8dbdc;

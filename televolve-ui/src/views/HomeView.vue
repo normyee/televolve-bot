@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <main class="centered-div">
-      <div class="slidebar">
+      <div class="slidebar" @click="clickedChat($event)">
         <div class="header">
           <div class="avatar">
             <img src="../assets/img/profile.png" alt="profile" />
@@ -265,13 +265,16 @@
         </div>
         <div class="message-content">
           <p class="chat-message chat-received bubble left">
-            Mensagem ENVIADA 👻<span class="chat-time">11:38 pm</span>
+            Mensagem RECEBIDA 👻<span class="chat-time">11:38 pm</span>
           </p>
           <p class="chat-message chat-sent bubble right">
-            Mensagem RECEBIDA 👻<span class="chat-time">11:39 pm</span>
+            Mensagem ENVIADA 👻<span class="chat-time">11:39 pm</span>
+          </p>
+          <p v-for="(message, index) in sentMessages" :key="index" class="chat-message chat-sent bubble right">
+           {{ message.text }}<span class="chat-time">{{message.time}}</span>
           </p>
         </div>
-        <MessageFooter></MessageFooter>
+        <MessageFooter @send="send"></MessageFooter>
       </div>
     </main>
   </div>
@@ -280,9 +283,62 @@
 <script setup>
 import MessageFooter from '../components/MessageFooter/MessageFooter.vue';
 import { useStore } from 'vuex';
+import { ref } from 'vue';
 
 // eslint-disable-next-line no-unused-vars
 const store = useStore();
+
+const selectedChat = ref(null);
+const sentMessages = ref([]);
+
+
+// Formatação de horas.
+const formatTime = () => {
+  const date = new Date();
+  const hours = date.getHours();
+  const minutes = date.getMinutes();
+
+  // Formata horas.
+  const formattedHours = hours < 10 ? `0${hours}` : hours;
+
+  // Formata minutos.
+  const formattedMinutes = minutes < 10 ? `0${minutes}` : minutes;
+
+  //Retorna formatado o horário.
+  return `${formattedHours}:${formattedMinutes}`;
+}
+
+
+const clickedChat = (e) => {
+  const target = e.target.closest('.slidebar-chat');
+  if (target) {
+    // Remove a cor de fundo do elemento anterior clicado.
+    if (selectedChat.value) {
+      selectedChat.value.style.backgroundColor = '';
+    }
+    // Define a cor de fundo no elemento clicado.
+    target.style.backgroundColor = '#c2c5c6';
+    // Armazena o elemento clicado como o novo elemento selecionado.
+    selectedChat.value = target;
+  }
+};
+
+// Função que recebe o valor do input do elemento filho do componente MessageFooter.
+const send = ({ messageInput }) => {
+  const messageText = messageInput._value;
+
+  if (messageText.trim() !== '') {
+
+
+
+    sentMessages.value.push({
+      text: messageText,
+      time: formatTime(),
+    });
+  }
+  
+};
+
 </script>
 
 <style src="./HomeView.css" scoped></style>
