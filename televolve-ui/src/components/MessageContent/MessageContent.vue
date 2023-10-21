@@ -1,15 +1,10 @@
 <template>
   <div class="message-content">
-    <p class="chat-message chat-received bubble left">
-      Mensagem RECEBIDA 👻<span class="chat-time">11:38 pm</span>
-    </p>
-    <p class="chat-message chat-sent bubble right">
-      Mensagem ENVIADA 👻<span class="chat-time">11:39 pm</span>
-    </p>
+    <!-- { MENSAGENS} -->
     <p
-      v-for="(message, index) in sentMessages"
+      v-for="(message, index) in allMessages"
       :key="index"
-      class="chat-message chat-sent bubble right"
+      :class="message.type === 'sent' ? 'chat-message chat-sent bubble right' : 'chat-message chat-received bubble left'"
     >
       {{ message.text }}<span class="chat-time">{{ message.time }}</span>
     </p>
@@ -20,8 +15,21 @@
 <script setup>
 import MessageFooter from '../MessageFooter/MessageFooter.vue';
 import { ref } from 'vue';
+import { io } from 'socket.io-client';
 
-const sentMessages = ref([]);
+const allMessages = ref([]);
+
+const socket = io('http://localhost:8000');
+
+socket.on('received_message', (data) => {
+  console.log('dado: ', data.data.text);
+  const message = {
+    text: data.data.text,
+    time: formatTime(),
+    type: 'received'
+  };
+  allMessages.value.push(message);
+});
 
 // Função que lida com formatação de horas.
 const formatTime = () => {
@@ -44,10 +52,12 @@ const send = ({ messageInput }) => {
   const messageText = messageInput._value;
 
   if (messageText.trim() !== '') {
-    sentMessages.value.push({
+    const message = {
       text: messageText,
-      time: formatTime()
-    });
+      time: formatTime(),
+      type: 'sent'
+    };
+    allMessages.value.push(message);
   }
 };
 </script>
