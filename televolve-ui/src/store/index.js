@@ -3,7 +3,8 @@ import authPerform from '../utils/auth-perform';
 
 export default createStore({
   state: {
-    user: null
+    user: null,
+    selectedChat: null
   },
   mutations: {
     SET_USER(state, user) {
@@ -11,6 +12,9 @@ export default createStore({
     },
     CLEAR_USER(state) {
       state.user = null;
+    },
+    SET_SELECTED_CHAT(state, chatData) {
+      state.selectedChat = chatData;
     }
   },
 
@@ -34,6 +38,10 @@ export default createStore({
     // Função que lida o estado atual do usuário.
     async fetchUser({ commit }) {
       await authPerform.findUser(commit);
-    }
+    },
+
+    selectChat({ commit }, chatData) {
+      commit('SET_SELECTED_CHAT', chatData);
+    },
   }
 });

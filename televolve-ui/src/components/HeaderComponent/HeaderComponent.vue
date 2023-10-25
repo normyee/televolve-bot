@@ -5,7 +5,7 @@
         <img :src="defaultProfile" alt="profile-icon" />
       </div>
       <div class="message-header-content">
-        <h4>SISIAMIMI</h4>
+        <h4 v-if="$store.state.selectedChat !== null">{{ $store.state.selectedChat.chatName }}</h4>
       </div>
     </div>
     <div class="header-right" @click="$store.dispatch('logOut')">
@@ -30,6 +30,8 @@ import { useStore } from 'vuex';
 
 // eslint-disable-next-line no-unused-vars
 const store = useStore();
+
+
 </script>
 
 <style src="./HeaderComponent.css" scoped></style>
