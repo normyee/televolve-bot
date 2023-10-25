@@ -52,7 +52,24 @@ Este é um projeto de chatbot para o Telegram, que permite a interação em temp
 - Ordernar a lista de chats de acordo com as mensagens recebidas, isto é, se chat X recebe uma atualização, ele ficará no topo da lista de chats
 - Fazer com que o Bot consiga responder uma mensagem específica pelo id da mensagem
 
-### Rotas
+### Endpoints
+`POST - /sendMessage`
+```
+http://localhost:8000/sendMessage -> envia uma mensagem para um chat especificado.
+```
+#### Exemplo:
+```
+{
+  "chat_id": 1448633266,
+  "text": "Olá"
+}
+```
+`GET - /getChats`
+```
+http://localhost:8000/getChats-> retorna todos os chats da aplicação e suas mensagens.
+```
+
+
 
 
 
