@@ -1,0 +1,34 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model ChatLog {
+ id String @id @default(uuid())
+ chatId String @unique // Identifica o chat. Negativo é de grupos, positivo é privado.
+ chatType String // Pode ser PRIVADO ou GROUP.
+ name String? // O nome, podendo ser nome do grupo ou nome do chat privado.
+ messages Message[] // Mensagens enviadas
+ created_at DateTime @default(now())
+
+ @@map("chatlog")
+}
+
+model Message {
+  id String @id @default(uuid())
+  messageId String? // id do remetente da mensagem
+  senderId String? // id da mensagem em si (útil para poder responder alguém diretamente por uma mensagem específica)
+  isBot Boolean?
+  text String?
+  username String?
+  type String // Pode ser tipo "sent" ou "received"
+  date DateTime @default(now())
+  chatLog ChatLog @relation(fields: [chatLogId], references: [id])
+  chatLogId String
+
+  @@map("message")
+}

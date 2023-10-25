@@ -1,23 +1,23 @@
 import { Request, Response, Router } from "express";
-import axios from "axios";
+import { TelegramBotController } from "../../infra/http/controller/telegram-bot.controller";
+import { TelegramBotService } from "../../service/telegram-bot.service";
+import { TelegramBot } from "../../infra/provider/telegram-bot";
 
 const router = Router();
+const telegramBotController = new TelegramBotController(
+  new TelegramBotService(new TelegramBot()),
+);
 
 // Rotas de métodos HTTP do Telegram.
-router.get("/getMessages", async (req: Request, res: Response) => {
-  try {
-    const response = await axios.get(
-      `https://api.telegram.org/bot${process.env.BOT_TOKEN}/getUpdates`,
-    );
 
-    console.log("RESULTADOS: ", response.data.result);
+// Rota que retorna todos os chats e mensagens.
+router.get("/getChats", (req: Request, res: Response) => {
+  telegramBotController.returnAllChatsAndMessages(req, res);
+});
 
-    return res.status(200).json({ resultado: response.data });
-  } catch (error) {
-    console.error(error);
-
-    return res.json({ message: "error" });
-  }
+// Rota para envio de mensagens
+router.post("/sendMessage", async (req: Request, res: Response) => {
+  telegramBotController.sendMessage(req, res);
 });
 
 export { router };
