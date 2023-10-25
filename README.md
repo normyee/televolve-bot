@@ -51,6 +51,7 @@ Este é um projeto de chatbot para o Telegram, que permite a interação em temp
 - Exibir histórico de conversas
 - Ordernar a lista de chats de acordo com as mensagens recebidas, isto é, se chat X recebe uma atualização, ele ficará no topo da lista de chats
 - Fazer com que o Bot consiga responder uma mensagem específica pelo id da mensagem
+- Exibir lista de chats no Slidebar em tempo real (atualmente é necessário dar refresh para ver novas conversas)
 
 ### Endpoints
 `POST - /sendMessage`
