@@ -1,14 +1,15 @@
 import { initializeApp } from 'firebase/app';
 import { getAuth } from 'firebase/auth';
+import settings from '../config/firebase-config';
 
 // Configuração do Firebase.
 const firebaseConfig = {
-  apiKey: 'AIzaSyAQluLLC3MgVyWHqWfLutPWGLl7N-B1rLg',
-  authDomain: 'vue-fire-auth-730db.firebaseapp.com',
-  projectId: 'vue-fire-auth-730db',
-  storageBucket: 'vue-fire-auth-730db.appspot.com',
-  messagingSenderId: '795709458956',
-  appId: '1:795709458956:web:79df97701d106badb47c29'
+  apiKey: settings.apiKey,
+  authDomain: settings.authDomain,
+  projectId: settings.projectId,
+  storageBucket: settings.storageBucket,
+  messagingSenderId: settings.messagingSenderId,
+  appId: settings.appId
 };
 
 const app = initializeApp(firebaseConfig);
