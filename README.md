@@ -2,7 +2,8 @@
 Este é um projeto de chatbot para o Telegram, que permite a interação em tempo real com os usuários, enviando e recebendo mensagens. O bot utiliza a API do Telegram Bot para sua funcionalidade. Além disso, o projeto inclui testes de integração com o Cypress para garantir a qualidade e confiabilidade das interações do chatbot.
 
 ## Requisitos
-- Configuração do SDK do Firebase para Autenticações
+- Uma conta na Google
+- SDK do Firebase Authentication
 - Node LTS
 - Docker
 
@@ -10,7 +11,10 @@ Este é um projeto de chatbot para o Telegram, que permite a interação em temp
 - Clone o projeto em sua máquina: `git clone https://github.com/normyee/televolve-bot.git`
 - Entre no projeto: `cd televolve-bot`
 #### Configuração no Frontend
-- Navegue até `src/config/settings.js` e preencha os dados com sua configuração do Firebase
+- Crie um projeto um projeto no Firebase: `https://console.firebase.google.com`
+- Salve os dados do FirebaseConfig
+- Ative o serviço de `Email/Password` do serviço de autenticação no console do Firebase
+- Dentro da pasta do Frontend, navegue até `src/config/settings.js` e preencha com os dados que você salvou do FirebaseConfig
 - Entre no Frontend: `cd ./televolve-ui`
 - Instale as dependências: `npm install`
 - Inicialize a aplicação Web: `npm run dev`
