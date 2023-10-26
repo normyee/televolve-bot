@@ -10,4 +10,8 @@ export class TelegramBotController {
   async returnAllChatsAndMessages(req: Request, res: Response) {
     return await this.telegrambot.returnAllChatsAndMessages(req, res);
   }
+
+  async returnChatAndMessagesById(req: Request, res: Response) {
+    return await this.telegrambot.returnChatAndMessagesById(req, res);
+  }
 }
