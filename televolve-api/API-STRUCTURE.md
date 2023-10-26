@@ -17,6 +17,9 @@ Este projeto adota os princípios de Domain-Driven Design (DDD) e Clean Architec
 ## Estrutura do projeto
 - `./common/types.ts`: Camada onde fica todos os tipos da aplicação.
 
+- `./errors`: Camada de erros customizados.
+   - `./errors/invalid-id-error.ts`: Erro customizado de quando um chatId é inválido
+
 - `./src/domain`: É o coração da aplicação.
    - `chatlog.entity.ts`: É a entidade do Chatlog.
    - `message.entity.ts`: É a entidade de mensagem.
