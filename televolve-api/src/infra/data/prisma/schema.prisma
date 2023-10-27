@@ -9,10 +9,10 @@ datasource db {
 
 model ChatLog {
  id String @id @default(uuid())
- chatId String @unique // Identifica o chat. Negativo é de grupos, positivo é privado.
- chatType String // Pode ser PRIVADO ou GROUP.
- name String? // O nome, podendo ser nome do grupo ou nome do chat privado.
- messages Message[] // Mensagens enviadas
+ chatId String @unique 
+ chatType String 
+ name String? 
+ messages Message[] 
  created_at DateTime @default(now())
 
  @@map("chatlog")
@@ -20,12 +20,12 @@ model ChatLog {
 
 model Message {
   id String @id @default(uuid())
-  messageId String? // id do remetente da mensagem
-  senderId String? // id da mensagem em si (útil para poder responder alguém diretamente por uma mensagem específica)
+  messageId String? 
+  senderId String? 
   isBot Boolean?
   text String?
   username String?
-  type String // Pode ser tipo "sent" ou "received"
+  type String 
   date DateTime @default(now())
   chatLog ChatLog @relation(fields: [chatLogId], references: [id])
   chatLogId String

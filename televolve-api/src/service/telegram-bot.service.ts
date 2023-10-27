@@ -1,21 +1,25 @@
 import { PrismaClient } from "@prisma/client";
-import { TelegramBot } from "../infra/provider/telegram-bot";
 import { Request, Response } from "express";
 import { InvalidIDException } from "../errors/invalid-id-error";
-import { PrismaService } from "../infra/provider/prisma-service";
+import { TelegramBotRepository } from "./telegram-bot.repository";
+import { ITelegramBotOperations } from "../infra/provider/telegram-bot-repository";
+import { IChatService } from "../infra/provider/chat-service.repository";
 const prisma = new PrismaClient();
 
-export class TelegramBotService {
+export class TelegramBotService implements TelegramBotRepository {
   constructor(
-    private readonly telegramBot: TelegramBot,
-    private readonly prismaService: PrismaService,
+    private readonly telegramBotOperations: ITelegramBotOperations,
+    private readonly chatService: IChatService,
   ) {}
 
   // Método para enviar mensagens.
   async sendMessage(req: Request, res: Response) {
     try {
       const { chat_id, text } = req.body;
-      const result = await this.telegramBot.sendMessage(chat_id, text);
+      const { result } = await this.telegramBotOperations.sendMessage(
+        chat_id,
+        text,
+      );
 
       const chatExists = await prisma.chatLog.findUnique({
         where: {
@@ -28,11 +32,11 @@ export class TelegramBotService {
       }
 
       const messages_data = {
-        senderId: String(result.data.result.from.id),
-        messageId: String(result.data.result.message_id),
+        senderId: String(result.from.id),
+        messageId: String(result.message_id),
         isBot: true,
         text: text,
-        username: result.data.result.from.username,
+        username: result.from.username,
         type: "sent",
         chatLogId: chatExists.id,
       };
@@ -42,7 +46,7 @@ export class TelegramBotService {
 
       return res
         .status(200)
-        .json({ message: "Message sent!", success: true, result: result.data });
+        .json({ message: "Message sent!", success: true, result: result });
     } catch (error) {
       console.error(error);
       return res
@@ -54,11 +58,7 @@ export class TelegramBotService {
   // Método para retornar todos os chats e seu log de interações.
   async returnAllChatsAndMessages(req: Request, res: Response) {
     try {
-      const results = await prisma.chatLog.findMany({
-        include: {
-          messages: true,
-        },
-      });
+      const results = await this.chatService.findAllChatsAndMessages();
 
       return res
         .status(200)
@@ -75,8 +75,12 @@ export class TelegramBotService {
   async returnChatAndMessagesById(req: Request, res: Response) {
     try {
       const { id } = req.params;
+      const limit = req.query.limit;
 
-      const result = await this.prismaService.findByIdChat(id);
+      const result = await this.chatService.findChatById(
+        id,
+        limit ? Number(limit) : undefined,
+      );
 
       if (!result) {
         throw new InvalidIDException("Invalid ID", 404);

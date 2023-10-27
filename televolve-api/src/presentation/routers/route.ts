@@ -1,13 +1,24 @@
 import { Request, Response, Router } from "express";
 import { TelegramBotController } from "../../infra/http/controller/telegram-bot.controller";
 import { TelegramBotService } from "../../service/telegram-bot.service";
-import { TelegramBot } from "../../infra/provider/telegram-bot";
-import { PrismaService } from "../../infra/provider/prisma-service";
+import { TelegramBotOperations } from "../../infra/provider/telegram-bot";
+import { ChatService } from "../../infra/provider/chat-service";
+import { SentimentAnalysisProvider } from "../../infra/provider/sentiment-analysis.provider";
+import { SentimentAnalysis } from "../../service/sentiment-analysis.service";
 
 const router = Router();
 const telegramBotController = new TelegramBotController(
-  new TelegramBotService(new TelegramBot(), new PrismaService()),
+  new TelegramBotService(new TelegramBotOperations(), new ChatService()),
 );
+
+const sentimentAnalysis = new SentimentAnalysis(
+  new SentimentAnalysisProvider(),
+  new ChatService(),
+);
+
+router.post("/davinci", (req: Request, res: Response) => {
+  sentimentAnalysis.execute(req, res);
+});
 
 // Rotas de métodos HTTP do Telegram
 
