@@ -1,5 +1,5 @@
 # Sobre a solução
-Este é um projeto de chatbot para o Telegram, que permite a interação em tempo real com os usuários, enviando e recebendo mensagens. O bot utiliza a API do Telegram Bot para sua funcionalidade. Além disso, o projeto inclui testes de integração com o Cypress para garantir a qualidade e confiabilidade das interações do chatbot.
+Este é um projeto de chatbot para o Telegram, que permite a interação em tempo real com os usuários, enviando e recebendo mensagens. O bot utiliza a API do Telegram Bot para sua funcionalidade. Além disso, o projeto inclui testes de integração com o Cypress para garantir a qualidade e confiabilidade das interações do chatbot e inteligência artificial para análise dos sentimentos dos usuários.
 
 ## Requisitos
 - Uma conta na Google
@@ -45,7 +45,6 @@ Este é um projeto de chatbot para o Telegram, que permite a interação em temp
 
 ## Próximos passos
 - Autenticação das rotas com JWT
-- Criação de um Servidor Flask em Python para criação de uma API que analisa sentimento das mensagens dos usuários que o Bot interage
 - Trocar imagem de perfil e descrição do bot pelo Frontend
 - Exibir a foto de perfil dos usuários, tal como o nome em grupos de conversação
 - Rolagem automática de novas mensagens
@@ -72,6 +71,25 @@ http://localhost:8000/sendMessage -> envia uma mensagem para um chat especificad
 `GET - /getChats`
 ```
 http://localhost:8000/getChats-> retorna todos os chats da aplicação e suas mensagens.
+```
+
+`GET - /getChats/id`
+```
+http://localhost:8000/getChats/id-> retorna um chat especificado pelo chatID
+```
+Por meio de queries, podemos limitar a quantidade de mensagens consultadas pelo banco de dados pelo query: `limit`.
+#### Exemplo: `http://localhost:8000/getChats/7411289562?limit=3`
+
+`POST - /davinci?limit=3`
+```
+http://localhost:8000/davinci?limit=3 -> Essa é um endpoint que utiliza API da OPENAI para analisar os sentimentos dos usuários de um determinado chatID. Sendo positivo eles: positivo, neutro ou negativo.
+```
+#### Exemplo:
+```
+{
+	"id": 1248733966,
+	"api_key": "SUA KEY DA OPENAI"
+}
 ```
 
 
