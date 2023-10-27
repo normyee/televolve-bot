@@ -82,7 +82,7 @@ Por meio de queries, podemos limitar a quantidade de mensagens consultadas pelo 
 
 `POST - /davinci?limit=3`
 ```
-http://localhost:8000/davinci?limit=3 -> Essa é um endpoint que utiliza API da OPENAI para analisar os sentimentos dos usuários de um determinado chatID. Sendo positivo eles: positivo, neutro ou negativo.
+http://localhost:8000/davinci?limit=3 -> analisa os sentimentos dos usuários de um determinado chatID.
 ```
 #### Exemplo:
 ```
