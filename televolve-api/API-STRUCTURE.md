@@ -33,7 +33,9 @@ Este projeto adota os princípios de Domain-Driven Design (DDD) e Clean Architec
     - `controller`:
       - `telegram-bot.controller.ts`: Controller da lógica da aplicação.
   - `provider`: É a camada que lida com os serviços da API.
-      - `telegram-bot.ts`: Arquivo de integração com o serviço da API do Telegram Bot.
+      - `chat-service.ts`: Provider de integração com o serviço do PrismaClient.
+      - `telegram-bot.ts`: Provider de Integração com o serviço da API do Telegram Bot.
+        - `telegram-bot.repository.ts`: Repository da Integração com o serviço da API do Telegram Bot.
 - `Presentation/routers/route.ts`: Camada onde lida com inicialização das rotas do Express. 
 
 - `service/telegram-bot.service`: É a camada que lida com os casos de uso da aplicação, em específico, os casos de uso com a API, como envio de mensagens ou retornar os logs.
