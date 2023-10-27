@@ -68,18 +68,19 @@ http://localhost:8000/sendMessage -> envia uma mensagem para um chat especificad
   "text": "Olá"
 }
 ```
+----------------------------------------------------------------------------------
 `GET - /getChats`
 ```
 http://localhost:8000/getChats-> retorna todos os chats da aplicação e suas mensagens.
 ```
-
+----------------------------------------------------------------------------------
 `GET - /getChats/id`
 ```
 http://localhost:8000/getChats/id-> retorna um chat especificado pelo chatID
 ```
 Por meio de queries, podemos limitar a quantidade de mensagens consultadas pelo banco de dados pelo query: `limit`.
 #### Exemplo: `http://localhost:8000/getChats/7411289562?limit=3`
-
+----------------------------------------------------------------------------------
 `POST - /davinci?limit=3`
 ```
 http://localhost:8000/davinci?limit=3 -> analisa os sentimentos dos usuários de um determinado chatID.
@@ -87,8 +88,8 @@ http://localhost:8000/davinci?limit=3 -> analisa os sentimentos dos usuários de
 #### Exemplo:
 ```
 {
-	"id": 1248733966,
-	"api_key": "SUA KEY DA OPENAI"
+  "id": 1248733966,
+  "api_key": "SUA KEY DA OPENAI"
 }
 ```
 
