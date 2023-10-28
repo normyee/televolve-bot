@@ -33,7 +33,7 @@ Este projeto adota os princípios de Domain-Driven Design (DDD) e Clean Architec
 
 - `./src/config`: É a configuração da classe App, onde os websockets são inicializados para comunicação com o Frontend. No construtor da classe, um processo de polling é implementado para escutar novas mensagens e atualizar o banco de dados com novos chats e log de interações com o bot.
 
-- `./src/infra`: É o coração da aplicação.
+- `./src/infra`: Camada de infraestrutura da aplicação.
   - `data`: Camada que lida com a lógica de banco de dados.
     - `prisma`: Pasta que se encontra o schema do prisma para modelagem das entidades.
   - `http`: Camada que lida com a lógica de requisições HTTP, nela temos a pasta.
